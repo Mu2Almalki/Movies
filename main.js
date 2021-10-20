@@ -20,7 +20,7 @@ fetch('https://imdb-api.com/en/API/MostPopularMovies/k_okjenv52', {
             let b = document.createElement("button")
             let divmini =document.createElement("div")
             x.innerText=data.items[i].title
-            b.innerText="Fav"
+            b.innerText="Add Favorite"
             let y =document.createElement("IMG")
             y.src = data.items[i].image
             div.appendChild(y)
