@@ -1,71 +1,71 @@
-
 let arrayMovi = [];
 
-// fetch('https://imdb-api.com/en/API/MostPopularMovies/k_nbd9s6cf', {
-//     "method": "GET",
-// })
+fetch('https://imdb-api.com/en/API/MostPopularMovies/k_okjenv52', {
+    "method": "GET",
+})
 
 
 
-// .then((response) => {
-//     console.log("resolve", response)
-//     return response.json();
-// }).then(
-//     data => {
-//         console.log(data.items)
-//         for(object in data.items ){
-//             // console.log(data.items[object].title)
-//             // console.log(data.items[object].image)
-//             let x = document.createElement("H3")
-//             let div=document.createElement("div")
-//             let b = document.createElement("button")
-//             let divmini =document.createElement("div")
-//             x.innerText=data.items[object].title
-//             b.innerText="Fav"
-//             let y =document.createElement("IMG")
-//             y.src = data.items[object].image
-//             div.appendChild(y)
-//             divmini.appendChild(x)
-//             divmini.appendChild(b)
-//             div.appendChild(divmini)
-//             y.className = "card-img-top"
-//             let maindiv=document.getElementById("movies")
-//             maindiv.appendChild(div)
-//             b.className="btn btn-primary"
-//             x.className="card-title"
-//             div.className="card"
-//             divmini.className="card-body"
+.then((response) => {
+    console.log("resolve", response)
+    return response.json();
+}).then(
+    data => {
+        console.log(data.items)
+        for(let i=0; i<data.items.length;i++ ){
+            // console.log(data.items[object].title)
+            // console.log(data.items[object].image)
+            let x = document.createElement("H3")
+            let div=document.createElement("div")
+            let b = document.createElement("button")
+            let divmini =document.createElement("div")
+            x.innerText=data.items[i].title
+            b.innerText="Fav"
+            let y =document.createElement("IMG")
+            y.src = data.items[i].image
+            div.appendChild(y)
+            divmini.appendChild(x)
+            divmini.appendChild(b)
+            div.appendChild(divmini)
+            y.className = "card-img-top"
+            let maindiv=document.getElementById("movies")
+            maindiv.appendChild(div)
+            b.className="btn btn-primary"
+            x.className="card-title"
+            div.className="card"
+            divmini.className="card-body"
 
 
-//             b.addEventListener('click', function () {
-//                 console.log(data.items[object]);
-//                 let check = false;
-//                 for (let i = 0; i < arrayMovi.length; i++) {
+            b.addEventListener('click', function () {
+                console.log(data.items[i]);
+                let check = false;
+                for (let j = 0; j < arrayMovi.length; j++) {
 
-//                     if (data.items[object].id == arrayMovi[i].id) {
-//                         alert("This movie is added")
-//                         check = true;
-//                         break;
+                    if (data.items[i].rank == arrayMovi[j].rank) {
+                        alert("This movie is already in the fav")
+                        check = true;
+                        break;
 
-//                     }
-//                 }
+                    }
+                }
 
-//                 if (check == false) {
-//                     arrayMovi.push(data.items[object]);
-//                     saveb()
+                if (check == false) {
+                    alert("The movie is added")
+                    arrayMovi.push(data.items[i]);
+                    saveb()
 
-//                 }
+                }
 
-//             })
+            })
 
 
 
-//         }
-//     }
+        }
+    }
 
-// ).catch((err) => {
-//     console.log('rejected', err)
-// });
+).catch((err) => {
+    console.log('rejected', err)
+});
 let searchInput = '';
 
 function favoriet() {
@@ -86,32 +86,32 @@ function favoriet() {
                 for (object in data.titles) {
                     // console.log(data.titles[object].title)
                     // console.log(data.titles[object].image)
-                 
+
 
 
                     let x = document.createElement("H3")
-                    let div=document.createElement("div")
+                    let div = document.createElement("div")
                     let b = document.createElement("button")
-                    let divmini =document.createElement("div")
-                    x.innerText=data.titles[object].title
-                    b.innerText="add Favorite"
-                    let y =document.createElement("IMG")
+                    let divmini = document.createElement("div")
+                    x.innerText = data.titles[object].title
+                    b.innerText = "add Favorite"
+                    let y = document.createElement("IMG")
                     y.src = data.titles[object].image
                     div.appendChild(y)
                     divmini.appendChild(x)
                     divmini.appendChild(b)
                     div.appendChild(divmini)
                     y.className = "card-img-top"
-                    let maindiv=document.getElementById("movies")
-                    maindiv.style.display="none"
-                    b.className="btn btn-primary"
-                    x.className="card-title"
-                    div.className="card"
-                    divmini.className="card-body"
-                    let divmin2=document.getElementById("movies2")
+                    let maindiv = document.getElementById("movies")
+                    maindiv.style.display = "none"
+                    b.className = "btn btn-primary"
+                    x.className = "card-title"
+                    div.className = "card"
+                    divmini.className = "card-body"
+                    let divmin2 = document.getElementById("movies2")
                     divmin2.appendChild(div)
-                    
-        
+
+
 
                     b.addEventListener('click', function () {
                         console.log(data.titles[object]);
@@ -189,7 +189,7 @@ function favmovie() {
         let d = document.createElement("button")
         let yf = document.createElement("IMG")
         let divf = document.createElement("div")
-        let divminif =document.createElement("div")
+        let divminif = document.createElement("div")
         xf.innerText = arrayMovi[i].title
         d.innerText = "Delet"
         yf.src = arrayMovi[i].image
@@ -201,25 +201,25 @@ function favmovie() {
         yf.className = "card-img-top"
         divf.className = "card"
         xf.className = "card-title"
-        divminif.className="card-body"
+        divminif.className = "card-body"
         let maindivf = document.getElementById("fav")
 
         maindivf.appendChild(divf)
         d.addEventListener('click', function () {
 
-                for (let i = 0; i < arrayMovi.length; i++) {
+            for (let i = 0; i < arrayMovi.length; i++) {
 
-                    if (arrayMovi[i].id == arrayMovi[i].id) {
-                        arrayMovi.splice(arrayMovi[i], 1);
-                        fav.removeChild(divf);
-                        saveb()
-                    }
+                if (arrayMovi[i].id == arrayMovi[i].id) {
+                    arrayMovi.splice(arrayMovi[i], 1);
+                    fav.removeChild(divf);
+                    saveb()
                 }
-            
+            }
 
 
-            })
-        }
+
+        })
+    }
 
 
 
