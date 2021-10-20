@@ -1,0 +1,114 @@
+body{
+    /* margin: 50px;  */
+ background-image: url("images/ba1.jpg");
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    
+}
+h1{
+    text-align: center;
+    width: 100%;
+    background-color:black;
+    color: rgb(240, 211, 174);
+    border-color: blanchedalmond;
+    border-style: inset;
+    font-family: 'Festive', cursive;
+}
+.soon{
+    /* background-color: rgb(240, 211, 174); */
+    display: grid;
+    grid-template-columns: 1fr 1fr  ;
+    justify-items: center;
+    width: 100%;
+    /* align-content: center; */
+    grid-gap: 50px;
+    /* border-style:outset; */
+}
+.movi1{
+    background-color:rgb(214, 207, 210);
+    /* padding-left: 50px;
+    padding-right: 50px; */
+     text-align: center;
+
+    
+
+}
+.movi2{
+    background-color:rgb(214, 207, 210);
+    /* grid-column: 3/4; */
+    /* padding-left: 50px;
+    padding-right: 50px; */
+    /* justify-items: center; */
+    text-align: center;
+
+}
+.movies{
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr ;
+    gap: 10px;
+    /* border-style:outset; */
+     margin-left: 10px; 
+     justify-items: center;
+
+
+}
+/* .but{
+    color: white;
+    background-color: black;
+    margin-left: 40%;
+} */
+/* .img1{
+    height: 400px;
+    width: 300px;
+} */
+/* h3{
+    background-color: rgb(164, 187, 187);
+    text-align: center;
+} */
+.card{
+width: 18rem;
+}
+@media only screen and (min-width:601px) and (max-width: 900px) {
+    .soon{
+        display: grid;
+         grid-template-columns: 1fr 1fr ; 
+        gap: 50px;    } 
+    .movies{
+        display: grid;
+    grid-template-columns: 2fr 2fr  ;
+    gap: 10px;
+    /* border-style:outset; */
+     margin-left: 10px; 
+     justify-items: center;
+    
+        }
+   
+    
+}
+
+@media only screen and (max-width: 600px){
+  
+    .soon{
+        /* background-color: rgb(240, 211, 174); */
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        /* border-style:outset; */
+    }
+    .movies{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+           
+    }
+    
+}
+#fav{
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+justify-content: center;
+}
